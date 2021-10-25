@@ -17,7 +17,10 @@
     		<div class="card-body">
     			
                 <input type="file" id="excel_file" />
-
+                <input type="text" id="name">
+                <a id="import" href='javascript:setup()'>Open in Excel</a>
+                <!-- <input type="submit" id="import" onclick="showInput();">Open in Excel</input> -->
+                <!-- <div id="info"></div> -->
     		</div>
     	</div>
         <div id="excel_data" class="mt-5"></div>
@@ -27,8 +30,17 @@
 
 <script>
 
-const excel_file = ""
+    function setup() {
+        const message = document.getElementById("name").value;
+        // alert(`<a id="import" href="ms-excel:ofe|u|file:///C:/Users/kevin/OneDrive/Documents/excel/ACS Housing Summary, ${message}.xlsx">Open in Excel</a>`);
+        // console.log(message);
+        document.getElementById("import").innerHTML = `<a id="import" href="ms-excel:ofe|u|file:///C:/Users/kevin/OneDrive/Documents/excel/ACS Housing Summary, ${message}.xlsx">Open in Excel</a>`;
+    }
 
+
+
+
+const excel_file = document.getElementById('excel_file');
 excel_file.addEventListener('change', (event) => {
 
     if(!['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-excel'].includes(event.target.files[0].type))
@@ -103,4 +115,3 @@ excel_file.addEventListener('change', (event) => {
 });
 
 </script>
-C:\Users\kevin\OneDrive\Documents\excel\
