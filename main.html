@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Convert Excel to HTML Table using JavaScript</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script type="text/javascript" src="https://unpkg.com/xlsx@0.15.1/dist/xlsx.full.min.js"></script>
+</head>
+  <body>
+
+    <form name="form1">
+        <input type=button onClick="test()" value="Open File">
+        <br><br>
+      </form>
+
+    <script type="text/javascript">
+        function test() 
+        {  
+          var Excel = new ActiveXObject("Excel.Application");  
+          Excel.Visible = true; Excel.Workbooks.open("C:\Users\kevin\OneDrive\Documents\excel\ACS Housing Summary, 90002.xlsx");  
+          var excel_sheet = Excel.Worksheets("Sheet1");  
+          excel_sheet.activate();  
+        }   
+      </script>
+  </body>
+</html>
+
+C:\Users\kevin\OneDrive\Documents\excel\
